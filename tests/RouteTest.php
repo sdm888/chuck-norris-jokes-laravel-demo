@@ -2,14 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Sdm888\ChuckNorrisJokesLaravel\Tests\Console;
+namespace Sdm888\ChuckNorrisJokesLaravel\Tests;
 
-use Illuminate\Support\Facades\Artisan;
 use Orchestra\Testbench\TestCase;
-use Sdm888\ChuckNorrisJokesLaravel\Providers\ChuckNorrisJokesServiceProvider;
 use Sdm888\ChuckNorrisJokesLaravel\Facades\ChuckNorrisJokes;
+use Sdm888\ChuckNorrisJokesLaravel\Providers\ChuckNorrisJokesServiceProvider;
 
-class ChuckNorrisJokeTest extends TestCase
+class RouteTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
@@ -26,18 +25,15 @@ class ChuckNorrisJokeTest extends TestCase
     }
 
     /** @test */
-    public function the_console_command_returns_a_joke()
+    public function the_route_can_be_accessed()
     {
-        $this->withoutMockingConsoleOutput();
-
         ChuckNorrisJokes::shouldReceive('getRandomJoke')
             ->once()
             ->andReturn('some joke');
 
-        $this->artisan('chuck-norris-joke');
-
-        $output = Artisan::output();
-
-        $this->assertSame('some joke' . PHP_EOL, $output);
+        $this
+            ->get('/chuck-norris-joke')
+            ->assertStatus(200)
+            ->assertSeeText('some joke');
     }
 }

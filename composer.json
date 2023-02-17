@@ -28,7 +28,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Sdm888\\ChuckNorrisJokesLaravel\\ChuckNorrisJokesServiceProvider"
+        "Sdm888\\ChuckNorrisJokesLaravel\\Providers\\ChuckNorrisJokesServiceProvider"
       ],
       "aliases": {
         "ChuckNorrisJokes": "Sdm888\\ChuckNorrisJokesLaravel\\Facades\\ChuckNorrisJokes"
