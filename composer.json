@@ -1,0 +1,38 @@
+{
+  "name": "sdm888/chuck-norris-jokes-laravel-demo",
+  "description": "Create random Chuck Norris jokes (version for Laravel).",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Sdm888\\ChuckNorrisJokesLaravel\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Sdm888\\ChuckNorrisJokesLaravel\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "sdm888"
+    }
+  ],
+  "require": {
+    "php": "^7.4||^8.0",
+    "sdm888/chuck-norris-jokes-demo": "1.0.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^8.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Sdm888\\ChuckNorrisJokesLaravel\\ChuckNorrisJokesServiceProvider"
+      ],
+      "aliases": {
+        "ChuckNorrisJokes": "Sdm888\\ChuckNorrisJokesLaravel\\Facades\\ChuckNorrisJokes"
+      }
+    }
+  }
+}
