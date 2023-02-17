@@ -4,6 +4,7 @@ namespace Sdm888\ChuckNorrisJokesLaravel\Console;
 
 use Illuminate\Console\Command;
 use Sdm888\ChuckNorrisJokes\JokeFactory;
+use Sdm888\ChuckNorrisJokesLaravel\Facades\ChuckNorrisJokes;
 
 class ChuckNorrisJoke extends Command
 {
@@ -13,14 +14,8 @@ class ChuckNorrisJoke extends Command
 
     protected JokeFactory $jokeFactory;
 
-    public function __construct(JokeFactory $jokeFactory)
-    {
-        parent::__construct();
-        $this->jokeFactory = $jokeFactory;
-    }
-
     public function handle()
     {
-        $this->info($this->jokeFactory->getRandomJoke());
+        $this->info(ChuckNorrisJokes::getRandomJoke());
     }
 }
