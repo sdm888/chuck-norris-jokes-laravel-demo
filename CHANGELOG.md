@@ -25,3 +25,5 @@ All notable changes to this project will be documented in this file.
 ## [2.3.0] - 2023-02-18
 - Added config file
 
+## [2.4.0] - 2023-02-18
+- Added model and migration
