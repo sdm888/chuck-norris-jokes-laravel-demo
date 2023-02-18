@@ -29,11 +29,12 @@ class RouteTest extends TestCase
     {
         ChuckNorrisJokes::shouldReceive('getRandomJoke')
             ->once()
-            ->andReturn('some joke');
+            ->andReturn($value = 'some joke');
 
         $this
             ->get('/chuck-norris-joke')
             ->assertStatus(200)
-            ->assertSeeText('some joke');
+            ->assertViewIs('chuck-norris::joke')
+            ->assertViewHas('joke', $value);
     }
 }

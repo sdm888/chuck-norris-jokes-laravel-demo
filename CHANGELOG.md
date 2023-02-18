@@ -18,3 +18,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2.2.1] - 2023-02-17
 - Added route GET "/chuck-norris-joke"
+
+## [2.2.2] - 2023-02-18
+- Improved test for route
