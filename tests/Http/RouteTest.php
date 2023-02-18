@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sdm888\ChuckNorrisJokesLaravel\Tests;
+namespace Sdm888\ChuckNorrisJokesLaravel\Tests\Http;
 
 use Orchestra\Testbench\TestCase;
 use Sdm888\ChuckNorrisJokesLaravel\Facades\ChuckNorrisJokes;
